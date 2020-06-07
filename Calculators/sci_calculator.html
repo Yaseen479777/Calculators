@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<style>
+
+    .main {
+      background-color:cadetblue;
+      width:35%;
+      margin: auto;
+      padding: 2%;
+		 border-radius: 12px;
+		
+    }
+
+    input[type=button] {
+      width: 107px;
+		 border: 1px medium #9F9F9F;
+  		 border-radius: 12px;
+   		 font-size:50px;
+    }
+    input[type=text]
+    {
+      width: 78%;
+		 border: 1px medium #9F9F9F;
+  		 border-radius: 12px;
+   		 font-size:50px;
+    }
+
+	input[type=button]:hover{
+		background-color: darkcyan;
+	}
+
+  .topnav {
+    width: 100%;
+  background-color:cadetblue;
+  overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.topnav a {
+  float:left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 50px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+
+.topnav a:hover {
+  background-color:aquamarine;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+     
+    
+
+		 
+		 
+    
+
+	</style>
+
+
+<body>
+  
+
+<div class="topnav">
+  <a href="SIMPLE_CALCULATOR.html">SIMPLE_CALCULATOR</a>
+  <a href="#">SCIENTIFIC_CALCULATOR</a>
+  <a href="conversion_calculator.html">CONVERSION_CALCULATOR</a>
+  <a href="About.html">ABOUT</a>
+ <a>SEARCH          <input type="search" name=""></a>
+  <br><br><br>
+  
+  
+</div>
+
+	  <div class="main" >
+    <form name="cal">
+      <input type="text" name="display" id="sin">
+      <input type="button" value="Csc" onclick="cal.display.value=''; clear(); finish()">
+      <br><br>
+      
+      
+      <input type="button" value="sin" onclick="cal.display.value+=''; sine(); mysin()">
+      <input type="button" value="cos" onclick="cal.display.value+=''; cos();  mycos()">
+      <input type="button" value="tan" onclick="cal.display.value+=''; tan(); mytan()">
+      <input type="button" value="log" onclick="cal.display.value+=''; log(); mylog()">
+      <input type="button" value="√" onclick="cal.display.value+=''; root(); myroot()">
+      <br><br>
+      <input type="button" value="9" onclick="cal.display.value+='9'; nine()">
+      <input type="button" value="8" onclick="cal.display.value+='8'; eight()">
+      <input type="button" value="7" onclick="cal.display.value+='7'; seven()">
+      <input type="button" value="+" onclick="cal.display.value+='+'; add()">
+      <input type="button" value="-" onclick="cal.display.value+='-'; subtract()">
+      <br><br>
+      <input type="button" value="6" onclick="cal.display.value+='6'; six()">
+      <input type="button" value="5" onclick="cal.display.value+='5'; five()">
+      <input type="button" value="4" onclick="cal.display.value+='4'; four()">
+      <input type="button" value="*" onclick="cal.display.value+='*'; multi()">
+      <input type="button" value="/" onclick="cal.display.value+='/'; divide()">
+      <br><br>
+      <input type="button" value="3" onclick="cal.display.value+='3'; three()">
+      <input type="button" value="2" onclick="cal.display.value+='2'; two()">
+      <input type="button" value="1" onclick="cal.display.value+='1'; one()">
+      <input type="button" value="0" onclick="cal.display.value+='0'; zero()">
+      <input type="button" value="=" onclick="cal.display.value= eval(cal.display.value); equal();">
+    </form>
+  </div>
+  <audio id="on" src="sounds/one.mp3"> </audio>
+  <audio id="tw" src="sounds/two.mp3"> </audio>
+  <audio id="th" src="sounds/three.mp3"> </audio>
+  <audio id="fo" src="sounds/four.mp3"> </audio>
+  <audio id="fi" src="sounds/five.mp3"> </audio>
+  <audio id="si" src="sounds/six.mp3"> </audio>
+  <audio id="se" src="sounds/seven.mp3"> </audio>
+  <audio id="ei" src="sounds/eight.mp3"> </audio>
+  <audio id="ni" src="sounds/nine.mp3"> </audio>
+  <audio id="add" src="sounds/add.mp3"> </audio>
+  <audio id="sb" src="sounds/subtract.mp3"> </audio>
+  <audio id="ml" src="sounds/multiply.mp3"> </audio>
+  <audio id="dv" src="sounds/divide.mp3"> </audio>
+  <audio id="eq" src="sounds/IS EQUAL TO.mp3"> </audio>
+  <audio id="cl" src="sounds/clear.mp3"> </audio>
+  <audio id="ro" src="sounds/root (1).mp3"> </audio>
+  <audio id="sen" src="sounds/sine.mp3"> </audio>
+  <audio id="cs" src="sounds/cos.mp3"> </audio>
+  <audio id="tn" src="sounds/ten.mp3"> </audio>
+  <audio id="lg" src="sounds/log.mp3"> </audio>
+  <audio id="ze" src="sounds/zero.mp3"> </audio>
+  
+</body>
+</html>
+<script>
+
+function one()
+{
+  var o =document.getElementById("on");
+  o.play();
+}
+
+function two()
+{
+  var t =document.getElementById("tw");
+  t.play();
+}
+	
+function three()
+{
+  var th =document.getElementById("th");
+  th.play();
+}
+function four()
+{
+  var fr =document.getElementById("fo");
+  fr.play();
+}
+function five()
+{
+  var fv =document.getElementById("fi");
+  fv.play();
+}
+function six()
+{
+  var sx =document.getElementById("si");
+  sx.play();
+}
+function seven()
+{
+  var sn =document.getElementById("se");
+  sn.play();
+}
+function eight()
+{
+  var et =document.getElementById("ei");
+  et.play();
+}
+	function nine()
+{
+  var nn =document.getElementById("ni");
+  nn.play();
+}
+function add()
+{
+  var ad =document.getElementById("add");
+  ad.play();
+}
+	
+function subtract()
+{
+  var mi =document.getElementById("sb");
+  mi.play();
+}
+	
+function multi()
+{
+  var my =document.getElementById("ml");
+  my.play();
+}
+	
+function divide()
+{
+  var dd =document.getElementById("dv");
+  dd.play();
+}
+function equal()
+{
+  var et =document.getElementById("eq");
+  et.play();
+}
+function finish()
+{
+  var cr =document.getElementById("cl");
+  cr.play();
+}
+function root()
+{
+  var rr =document.getElementById("ro");
+  rr.play();
+}
+function sine()
+{
+  var s =document.getElementById("sen");
+  s.play();
+}
+function cos()
+{
+  var c =document.getElementById("cs");
+  c.play();
+}
+function tan()
+{
+  var t =document.getElementById("tn");
+  t.play();
+}
+function zero()
+{
+  var z =document.getElementById("ze");
+  z.play();
+}	
+
+function log()
+{
+  var l =document.getElementById("lg");
+  l.play();
+}	
+
+function mysin(){
+	cal.display.value=Math.sin(cal.display.value);
+	
+}
+function mycos(){
+	cal.display.value=Math.cos(cal.display.value);
+	
+}
+function mytan(){
+	cal.display.value=Math.tan(cal.display.value);
+	
+}
+function mylog(){
+	cal.display.value=Math.log(cal.display.value);
+	
+}
+function myroot(){
+	cal.display.value=Math.sqrt(cal.display.value);
+	
+}
+ 	
+
+
+</script>

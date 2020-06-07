@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<style>
+	table.calc {
+		 width:35%;
+		 height:100px;
+		background-color: cadetblue;
+		border-radius: 10px;
+		margin: auto;
+	}
+	input.calc {
+    	 width: 98%;
+		 height:80px;
+    	 margin: px;
+		 border: 1px medium #9F9F9F;
+  		 border-radius: 12px;
+   		 font-size:50px;
+		 cursor: pointer;
+		
+	}
+	input.calce {
+     	 width: 100%;
+		 height:80px;
+     	 margin: 2px;
+		 border: 5px medium #9F9F9F;
+  	 	 border-radius: 12px;
+   		 font-size:80px;
+		 border-bottom-left-radius: 50px;
+   		 border-bottom-right-radius: 50px;
+	}
+	input.calcs {
+     	 width: 99%;
+		 height:80px;
+    	 margin: 2px;
+		 border: 2px double #9F9F9F;
+ 	     border-radius: 15px;
+ 	 	
+  		 font-size:50px;
+ 	 	 color:#9F9F9F;
+		
+ 
+	}
+	input.calc:hover{
+		background-color:darkcyan;
+	}
+	input.calce:hover{
+		background-color:darkcyan;
+	}
+		
+	.topnav {
+		width: 100%;
+  background-color:cadetblue;
+  overflow: hidden;
+		margin-bottom: 100px;
+}
+
+.topnav a {
+  float:left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 50px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+
+.topnav a:hover {
+  background-color:aquamarine;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+		 
+    
+
+	</style>
+
+
+<body>
+
+<div class="topnav">
+  <a href="#">SIMPLE_CALCULATOR</a>
+  <a href="sci_calculator.html">SCIENTIFIC_CALCULATOR</a>
+  <a href="conversion_calculator.html">CONVERSION_CALCULATOR</a>
+  <a href="About.html">ABOUT</a>
+ <a>SEARCH          <input type="search" name=""></a>
+  <br><br><br>
+  
+  
+</div>
+<div>
+<table class="calc" cellpadding="4">
+<tr><td colspan="4"><input class="calcs" id="screen" type="text"></td></tr>
+<tr>
+<td><input class="calc" type="button" value="1" onclick="pushButton(this.value); one()"></td>
+<td><input class="calc" type="button" value="2" onclick="pushButton(this.value); two()"></td>
+<td><input class="calc" type="button" value="3" onclick="pushButton(this.value); three()"></td>
+<td><input class="calc" type="button" value="/" onclick="pushButton(this.value); divide()"></td>
+</tr>
+<tr>
+<td><input class="calc" type="button" value="4" onclick="pushButton(this.value); four()"></td>
+<td><input class="calc" type="button" value="5" onclick="pushButton(this.value); five"></td>
+<td><input class="calc" type="button" value="6" onclick="pushButton(this.value); six()"></td>
+<td><input class="calc" type="button" value="*" onclick="pushButton(this.value); multiply()"></td>
+</tr>
+<tr>
+<td><input class="calc" type="button" value="7" onclick="pushButton(this.value); seven()"></td>
+<td><input class="calc" type="button" value="8" onclick="pushButton(this.value); eight()"></td>
+<td><input class="calc" type="button" value="9" onclick="pushButton(this.value); nine()"></td>
+<td><input class="calc" type="button" value="-" onclick="pushButton(this.value); subtract()"></td>
+</tr>
+<tr>
+<td><input class="calc" type="button" value="0" onclick="pushButton(this.value); zero()"></td>
+<td><input class="calc" type="button" value="." onclick="pushButton(this.value); dot()"></td>
+<td><input class="calc" type="button" value="C" onclick="pushButton(this.value); cut()"></td>
+<td><input class="calc" type="button" value="+" onclick="pushButton(this.value); add()"></td>
+</tr>
+<tr><td colspan="4"><input class="calce" type="button" value="=" onclick="calculate(document.getElementById('screen').value); equal()"></td></tr>
+</table>
+</div>
+ 
+
+
+	<audio id="one" src="sounds/one.mp3" ></audio>
+	<audio id="two" src="sounds/two.mp3" ></audio>
+	<audio id="three" src="sounds/three.mp3" ></audio>
+	<audio id="four" src="sounds/four.mp3" ></audio>
+	<audio id="five" src="sounds/five.mp3" ></audio>
+	<audio id="six" src="sounds/six.mp3" ></audio>
+	<audio id="seven" src="sounds/seven.mp3" ></audio>
+	<audio id="eight" src="sounds/eight.mp3" ></audio>
+	<audio id="nine" src="sounds/nine.mp3" ></audio>
+	<audio id="zero" src="sounds/zero.mp3" ></audio>
+	<audio id="add" src="sounds/add.mp3" ></audio>
+	<audio id="subtract" src="sounds/subtract.mp3" ></audio>
+	<audio id="multiply" src="sounds/multiply.mp3" ></audio>
+	<audio id="divide" src="sounds/divide.mp3" ></audio>
+	<audio id="dot" src="sounds/point.mp3" ></audio>
+	<audio id="cut" src="sounds/clear.mp3" ></audio>
+	<audio id="equal" src="sounds/IS EQUAL TO.mp3" ></audio>
+</div>
+	
+	
+		
+	
+
+	
+
+
+</body>
+</html>
+<script>
+
+function pushButton(buttonValue) {
+     if (buttonValue == 'C') {
+          document.getElementById('screen').value = '';
+     }
+     else {
+          document.getElementById('screen').value += buttonValue;
+     }
+}
+function calculate(equation) {
+     var answer = eval(equation);
+     document.getElementById('screen').value = answer;
+}
+
+	
+function one(){
+		var a =document.getElementById("one");
+		a.play();
+	}
+	
+function two(){
+		var b =document.getElementById("two");
+		b.play();
+	}
+function three(){
+		var c =document.getElementById("three");
+		c.play();
+	}
+function four(){
+		var d =document.getElementById("four");
+		d.play();
+	}
+function five(){
+		var e =document.getElementById("five");
+		e.play();
+	}
+function six(){
+		var f =document.getElementById("six");
+		f.play();
+	}
+
+function seven(){
+		var g =document.getElementById("seven");
+		g.play();
+	}
+function eight(){
+		var h =document.getElementById("eight");
+		h.play();
+	}
+function nine(){
+		var i =document.getElementById("nine");
+		i.play();
+	}
+function zero(){
+		var j =document.getElementById("zero");
+		j.play();
+	}
+function add(){
+		var k =document.getElementById("add");
+		k.play();
+	}
+function multiply(){
+		var l =document.getElementById("multiply");
+		l.play();
+	}
+function divide(){
+		var m =document.getElementById("divide");
+		m.play();
+	}
+function subtract(){
+		var n =document.getElementById("subtract");
+		n.play();
+	}
+function dot(){
+		var o =document.getElementById("dot");
+		o.play();
+	}
+function cut(){
+		var q =document.getElementById("cut");
+		q.play();
+	}
+function equal(){
+		var r =document.getElementById("equal");
+		r.play();
+	}
+	
+	
+
+</script>
